@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.6.0",
+    "browserslist": "^4.23.0",
+    "lightningcss": "^1.24.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
   }

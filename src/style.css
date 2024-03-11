@@ -2,10 +2,141 @@
 
 @import "_preflight.css" layer(preflight);
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap')
-
 @layer main {
   :root {
-   
+    --dark-charcoal: #312e2c;
+    --wenge-brown: #5f564d;
+    --snow: #fff7fb;
+    --dark-raspberry: #7a284e;
+    --brandy-red: #854632;
+    --white-coffee: #E3DDD7;
+  }
+
+  main {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--wenge-brown);
+
+    h2 {
+      font-family: 'Young Serif', sans-serif;
+      font-size: 28px;
+      line-height: 100%;
+      color: var(--brandy-red);
+    }
+
+    ol, ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 42px;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+      }
+    }
+  
+    ol {
+      list-style-type: decimal;
+      list-style-position: outside;
+      padding-left: 20px;
+  
+      li {
+        padding-left: 20px;
+  
+        &::marker {
+          font-weight: bold;
+        }
+      }
+    }
+  
+    section:not(:first-of-type) {
+      margin: 32px 32px 0;
+    }
+  
+    section:last-of-type {
+      margin-bottom: 40px;
+    }
+  
+    .hero img {
+      height: 170px;
+      object-fit: cover;
+      object-position: center;
+    }
+  
+    section.header {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+      margin-top: 40px;
+  
+      h1 {
+        font-family: 'Young Serif', sans-serif;
+        font-size: 36px;
+        line-height: 100%;
+        color: var(--dark-charcoal);
+      }
+    }
+  
+    .subheader {
+      background-color: var(--snow);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+  
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 100%;
+        color: var(--dark-raspberry);
+      }
+    }
+  
+    .ingredients, .instructions, .nutrition {
+      display: flex;
+      flex-direction: column;    
+      row-gap: 24px;
+    }
+  
+    .nutrition {
+      dl {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        dt, dd {
+          padding-block: 12px;
+        }
+        
+        dt:not(:last-of-type), dd:not(:last-of-type) {
+          border-bottom: 1.5px solid var(--white-coffee);
+        }
+
+        dt {
+          padding-left: 32px;
+        }
+        
+        dd {
+          padding-left: 10px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    hr {
+      margin: 32px 32px 0;
+      border: none;
+      outline: 1px solid var(--white-coffee);
+    }
   }
 }

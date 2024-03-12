@@ -162,7 +162,7 @@
       }
 
       section:not(:first-of-type) {
-        padding: 0px;
+        padding-inline: 0px;
       }
   
       .hero img {

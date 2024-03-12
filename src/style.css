@@ -4,12 +4,15 @@
 
 @layer main {
   :root {
+    background-color: var(--eggshell);
+
     --dark-charcoal: #312e2c;
     --wenge-brown: #5f564d;
     --snow: #fff7fb;
     --dark-raspberry: #7a284e;
     --brandy-red: #854632;
     --white-coffee: #E3DDD7;
+    --eggshell: #F3E5D7;
   }
 
   main {
@@ -17,6 +20,19 @@
     font-size: 16px;
     line-height: 150%;
     color: var(--wenge-brown);
+    max-width: 736px;
+    margin-inline: auto;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+      background-color: white;
+    }
+
+    section:not(:first-of-type) {
+      padding-inline: 32px;
+    }
 
     h2 {
       font-family: 'Young Serif', sans-serif;
@@ -58,26 +74,18 @@
         }
       }
     }
-  
-    section:not(:first-of-type) {
-      margin: 32px 32px 0;
-    }
-  
-    section:last-of-type {
-      margin-bottom: 40px;
-    }
-  
+
     .hero img {
-      height: 170px;
+      max-height: 300px;
       object-fit: cover;
       object-position: center;
     }
-  
-    section.header {
+   
+    .header {
       display: flex;
       flex-direction: column;
       row-gap: 24px;
-      margin-top: 40px;
+      padding-top: 8px;
   
       h1 {
         font-family: 'Young Serif', sans-serif;
@@ -94,6 +102,8 @@
       display: flex;
       flex-direction: column;
       row-gap: 16px;
+      margin-inline: 32px;
+      padding: 24px;
   
       h3 {
         font-size: 20px;
@@ -134,9 +144,39 @@
     }
 
     hr {
-      margin: 32px 32px 0;
+      margin-inline: 32px;
       border: none;
       outline: 1px solid var(--white-coffee);
+    }
+  }
+
+  @media screen and (min-width: 656px) {
+    main {
+      display: grid;
+      place-items: center;
+      margin-block: 120px;
+
+      article {
+        border-radius: 24px;
+        padding: 40px;
+      }
+
+      section:not(:first-of-type) {
+        padding: 0px;
+      }
+  
+      .hero img {
+        border-radius: 12px;
+      }
+     
+      .header h1 {
+        font-size: 40px;
+      }
+    
+      section.subheader {
+        margin-inline: 0px;
+        padding: 28px;
+      }
     }
   }
 }
